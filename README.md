@@ -4,6 +4,8 @@ This repository contains code to implement a music streaming webiste with a reco
 
 AJAX techniques like submission throttling for search suggestions and RESTful API calls were implemented.
 
+Angulaar for front-end and Flask for back-end.
+
 The team comprised of:
 
 [PES1201701532 Zenkar Srinivas]
