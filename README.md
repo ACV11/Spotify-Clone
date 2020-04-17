@@ -6,6 +6,6 @@ AJAX techniques like submission throttling for search suggestions and RESTful AP
 
 The team comprised of:
 
-PES1201701532 Zenkar Srinivas
-PES1201700094 Suryanarayan N
-PES1201701135 Ashish Christopher Victor
+[PES1201701532 Zenkar Srinivas]
+[PES1201700094 Suryanarayan N]
+[PES1201701135 Ashish Christopher Victor]
