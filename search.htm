@@ -1,0 +1,13 @@
+<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+<link href="searchstyle.css" rel="stylesheet" />
+<div class="bar">
+	<!-- Create a binding between the searchString model and the text field -->
+	<input type="text" ng-model="searchString" placeholder="Enter song name" />
+</div>
+
+<ul>
+	<li ng-repeat="i in items | searchFor:searchString">
+		<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+		<p>{{i.title}}</p>
+	</li>
+</ul>

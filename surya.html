@@ -1,0 +1,89 @@
+<!--login.html-->
+<html ng-app="testApp">
+    <body ng-controller="testController">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+<div class="jumbotron" style="background-color:black;background-image: url('images/unnamed.jpg');background-repeat: no-repeat;background-position: center;">
+        <div class="container">
+          <!--<div class="header">Welcome to Spotify!</div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-view></div> 
+            </div>
+        </div>
+    </div>-->
+
+<div class="col-md-4 col-md-offset-4" style="padding-top:140px">
+    <h2 style="text-align:center;color:rgba(255,255,255,0.9);font-family:lineto-circular;font-weight: 900">Login</h2>
+    <form name="form" ng-submit="vm.login()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username" style="font-size:18px;color:black;font-family: lineto-circular;font-weight: 400">Username</label>
+            <input style="background: rgba(255,255,255,0.5)" type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password" style="font-size:18px;color:black;font-family: lineto-circular;font-weight: 400">Password</label>
+            <input style="background: rgba(255,255,255,0.5)" type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions" layout="row">
+            <button ng-click="performcall()"  class="btn btn-primary"  ">Login</button>
+            <!--<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///" />--><!-- truncated line -->
+            <span style="float:right;color:white;font-size:16px">Not a member?<a href="register.htm" class="btn btn-link" style="color:white;font-size:16px">Register</a></span>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+
+    <!-- <script type="text/javascript">
+        function validationtest()
+        {
+            var usertext= document.getElementById("username").value;
+            var paswrdtext = document.getElementById("password").value;
+
+            // var data = JSON.stringify({"username":usertext,"password":paswrdtext});
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4 && ) {
+                console.log(this.responseText);
+                alert(xhr.responseText);
+            }
+            });
+
+            xhr.open("GET", "localhost:5000/api/v1/get_users/zenkar");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.send(data);
+            alert(xhr.responseText);
+            console.log(xhr.response);
+            if(xhr.response===paswrdtext){
+                window.location.replace("localhost/page.html");
+            }
+                    };
+        </script> -->
+        
+ 
+        <script >
+            var testApp = angular.module("testApp", []);
+
+             testApp.controller("testController", function($scope, $http) {
+            $scope.performCall = function(){
+                // Simple GET request example:
+                console.log("entering")
+                $http({
+                method: 'GET',
+                url: 'localhost:5000/api/v1/get_users/zenkar'
+                }).then(function successCallback(response) {
+                console.log(response)
+                },
+                 function errorCallback(response) {
+                     console.log("not working")
+                });
+                } });
+    </script>
+    
+</body>

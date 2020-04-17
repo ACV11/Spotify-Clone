@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #youtube-icon {
+            bottom:0;
+            right:0;
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head> 
+<body>
+    <button onclick="xyz()">click to change</button>
+    <div
+    
+    data-autoplay="0"         
+    data-loop="1"             
+    id="youtube-audio">
+        
+    </div>
+
+    <script> 
+
+        function xyz()
+        {
+            icount += 1;
+            var q = ["QYh6mYIJG2Y",
+            "LH4Y1ZUUx2g",
+            "393C3pr2ioY",
+            "DiItGE3eAyQ",
+            "1_zgKRBrT0Y",
+            "ZAfAud_M_mg",
+            "av5JD1dfj_c",
+            "ApXoWvfEYVU",
+            "WXBHCQYxwr0"
+            ];
+            var element = document.getElementById("youtube-audio");
+            element.removeChild(document.getElementById("youtube-player"));
+            element.removeChild(document.getElementById("youtube-icon"));
+            var datavideo= q[icount];
+            console.log(icount);
+            console.log(datavideo);
+
+            var e=document.getElementById("youtube-audio"),t=document.createElement("img");
+            t.setAttribute("id","youtube-icon"),t.style.cssText="cursor:pointer;cursor:hand",e.appendChild(t);
+            var a=document.createElement("div");
+            a.setAttribute("id","youtube-player"),e.appendChild(a);
+            
+            var o=function(e){
+                var a=e?"IDzX9gL.png":"quyUPXN.png";
+                t.setAttribute("src","https://i.imgur.com/"+a)};
+                e.onclick=function(){
+                    r.getPlayerState()===YT.PlayerState.PLAYING||r.getPlayerState()===YT.PlayerState.BUFFERING?(r.pauseVideo(),o(!1)):(r.playVideo(),o(!0))};
+                    var r=new YT.Player("youtube-player",
+                        {height:"0",width:"0",videoId:datavideo,
+                        playerVars:{autoplay:e.dataset.autoplay,loop:e.dataset.loop},
+                        events:{
+                            onReady:function(e){r.setPlaybackQuality("small"),
+                            o(r.getPlayerState()!==YT.PlayerState.CUED)},
+                            onStateChange:function(e){e.data===YT.PlayerState.ENDED&&o(!1)}}
+                        })
+                }
+                function onYouTubeIframeAPIReady()
+                {   
+                    icount = 0;
+                    var datavideo= "QYh6mYIJG2Y" ;
+                    var e=document.getElementById("youtube-audio"),t=document.createElement("img");
+                    t.setAttribute("id","youtube-icon"),t.style.cssText="cursor:pointer;cursor:hand",e.appendChild(t);
+                    var a=document.createElement("div");
+                    a.setAttribute("id","youtube-player"),e.appendChild(a);
+                    var o=function(e){
+                        var a=e?"play.webp":"pause.png";
+                        t.setAttribute("src",""+a)};
+                        e.onclick=function(){
+                            r.getPlayerState()===YT.PlayerState.PLAYING||r.getPlayerState()===YT.PlayerState.BUFFERING?(r.pauseVideo(),o(!1)):(r.playVideo(),o(!0))};
+                            var r=new YT.Player("youtube-player",
+                                {height:"0",width:"0",videoId:datavideo,
+                                playerVars:{autoplay:e.dataset.autoplay,loop:e.dataset.loop},
+                                events:{
+                                    onReady:function(e){r.setPlaybackQuality("small"),
+                                    o(r.getPlayerState()!==YT.PlayerState.CUED)},
+                                    onStateChange:function(e){e.data===YT.PlayerState.ENDED&&o(!1)}}
+                                })
+                        }
+                    </script>
+
+                </body>
+                </html>

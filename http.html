@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>fill main page</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+</head>
+<body ng-app="Spotify" ng-controller="homeController">
+
+	<div class = "name" >{{playlists[1]["name"]}}</div>
+	<div class = "rec_list">
+
+		<div class = "album_info" ng-repeat="i in playlists[1]['info']" >
+			<a target="_blank" href="#">
+				<img src = "{{i['image']}}">
+				<div class = "desc">{{i['name']}}</div>
+			</a>
+		</div>
+	</div>
+
+	<div class = "name" >{{playlists[1]["name"]}}</div>
+	<div class = "rec_list">
+
+		<div class = "album_info" ng-repeat="i in playlists[1]['info']" >
+			<a target="_blank" href="#">
+				<img src = "{{i['image']}}">
+				<div class = "desc">{{i['name']}}</div>
+			</a>
+		</div>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="http.js"></script>
+</body>
+</html>
